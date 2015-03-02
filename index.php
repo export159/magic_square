@@ -16,7 +16,7 @@ $(function() {
 			}
 			else if ($input % 4)
 			{
-				//singly even.
+				solution_singly_even($input);
 			}
 			else
 			{

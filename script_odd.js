@@ -60,3 +60,87 @@ function createSolution($input)
 	}
 	genTbl($input, $magic);
 }
+
+function solution_singly_even($input)
+{
+	$maxcol = 0;
+	$mincol = 0;
+	$maxrow = 0;
+	$minrow = 0;
+	$magic = new Array($input);
+	for ($i = 0; $i < $input; $i++)
+	{
+		$magic[$i] = new Array($input);
+	}
+	for ($i = 0; $i < $input; $i++)
+	{
+		for ($j = 0; $j < $input; $j++)
+		{
+			$magic[$i][$j] = 0;
+		}
+	}
+	for ($ctr = 0; $ctr < 4; $ctr++)
+	{
+		console.log('loop ' + ($ctr+1));
+		if ($ctr == 0)
+		{
+			$mincol = 0;
+			$maxcol = $input / 2;
+			$minrow = 0;
+			$maxrow = $input / 2;
+		}
+		else if ($ctr == 1)
+		{
+			$mincol = ($input / 2) - 1;
+			$maxcol = $input;
+			$minrow = ($input / 2) - 1;
+			$maxrow = $input;
+		}
+		else if ($ctr == 2)
+		{
+			$mincol = ($input / 2) - 1;
+			$maxcol = $input;
+			$minrow = 0;
+			$maxrow = $input / 2;
+		}
+		else if ($ctr == 3)
+		{
+			$mincol = 0;
+			$maxcol = $input / 2;
+			$minrow = ($input / 2) - 1;
+			$maxrow = $input;
+		}
+		$center = $mincol + Math.ceil(($input/2) / 2);
+		$row = $minrow;
+		$col = $center - 1;
+		for ($i = 0; $i < (($input/2) * ($input / 2));)
+		{
+			if ($magic[$row][$col] == 0)
+			{
+				$magic[$row][$col] = $i + 1;
+				$col++;
+				$row--;
+				if ($col > $maxcol)
+					$col = $mincol;
+				if ($row < $minrow)
+					$row = $maxrow;
+				$i++;
+			}
+			else
+			{
+				$col--;
+				$row++;
+				if ($row > $maxrow)
+					$row = $minrow;
+				if ($col < $mincol)
+					$col = $maxcol;
+				$row++;
+				if ($row > $maxrow)
+					$row = $minrow;
+				if ($col < $mincol)
+					$col = $maxcol;
+			}
+		}
+	}
+	genTbl($input, $magic);
+}
