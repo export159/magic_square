@@ -4,6 +4,7 @@
 <title>Magic Square</title>
 <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="script_odd.js"></script>
+<script type="text/javascript" src="script_doubly_even.js"></script>
 </head>
 <body>
 <input type="text" id="input" name="input" />
