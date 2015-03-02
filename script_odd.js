@@ -3,28 +3,11 @@ $(function() {
 		$input = $('#input').val();
 		if ($input % 2 && $input > 1)
 		{
-			genTbl($input);
 			createSolution($input);
 		}
 	});
 });
-
-function genTbl($input)
-{
-	$content = '<table border=1>';
-	for ($i = 0; $i < $input; $i++)
-	{
-		$content += '<tr>';
-		for ($j = 0; $j < $input; $j++)
-		{
-			$content += '<td>&nbsp;</td>';
-		}
-		$content += '</tr>';
-	}
-	$content += '</table>';
-	$('#content').html($content);
-}
-function genTbl2($input, $magic)
+function genTbl($input, $magic)
 {
 	$content = '<table border=1>';
 	for ($i = 0; $i < $input; $i++)
@@ -64,13 +47,9 @@ function createSolution($input)
 			$col++;
 			$row--;
 			if ($col > $input - 1)
-			{
 				$col = 0;
-			}
 			if ($row < 0)
-			{
 				$row = $input - 1;
-			}
 			$i++;
 		}
 		else
@@ -88,5 +67,5 @@ function createSolution($input)
 				$col = $input - 1;
 		}
 	}
-	genTbl2($input, $magic);
+	genTbl($input, $magic);
 }
