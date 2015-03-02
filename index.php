@@ -2,12 +2,13 @@
 <html>
 <head>
 <title>Magic Square</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="script_odd.js"></script>
 </head>
 <body>
-<form>
-<input type="text" id="square" name="square" />
+<input type="text" id="input" name="input" />
 <button id="create">Display Magic Square</button>
-</form>
+<hr/>
 <div id="content"></div>
 </body>
 </html>
