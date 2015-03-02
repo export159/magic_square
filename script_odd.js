@@ -1,9 +1,19 @@
 $(function() {
 	$('#create').click(function() {
 		$input = $('#input').val();
-		if ($input % 2 && $input > 1)
-		{
-			createSolution($input);
+		if ($input > 1)
+			if ($input % 2)
+			{
+				createSolution($input);
+			}
+			else if ($input % 4)
+			{
+				//singly even.
+			}
+			else
+			{
+				//doubly even.
+			}
 		}
 	});
 });
