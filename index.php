@@ -9,7 +9,7 @@
 $(function() {
 	$('#create').click(function() {
 		$input = $('#input').val();
-		if ($input > 1)
+		if ($input > 1){
 			if ($input % 2)
 			{
 				createSolution($input);
@@ -20,7 +20,7 @@ $(function() {
 			}
 			else
 			{
-				//doubly even.
+				solution_doubly_even($input);
 			}
 		}
 	});
