@@ -1,22 +1,3 @@
-$(function() {
-	$('#create').click(function() {
-		$input = $('#input').val();
-		if ($input > 1)
-			if ($input % 2)
-			{
-				createSolution($input);
-			}
-			else if ($input % 4)
-			{
-				//singly even.
-			}
-			else
-			{
-				//doubly even.
-			}
-		}
-	});
-});
 function genTbl($input, $magic)
 {
 	$content = '<table border=1>';
