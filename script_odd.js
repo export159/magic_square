@@ -79,7 +79,7 @@ function solution_singly_even($input)
 			$magic[$i][$j] = 0;
 		}
 	}
-	for ($ctr = 0; $ctr < 4; $ctr++)
+	for ($ctr = 0, $i=0; $ctr < 4; $ctr++)
 	{
 		console.log('loop ' + ($ctr+1));
 		if ($ctr == 0)
@@ -91,14 +91,14 @@ function solution_singly_even($input)
 		}
 		else if ($ctr == 1)
 		{
-			$mincol = ($input / 2) - 1;
+			$mincol = $input / 2;
 			$maxcol = $input;
-			$minrow = ($input / 2) - 1;
+			$minrow = $input / 2;
 			$maxrow = $input;
 		}
 		else if ($ctr == 2)
 		{
-			$mincol = ($input / 2) - 1;
+			$mincol = $input / 2;
 			$maxcol = $input;
 			$minrow = 0;
 			$maxrow = $input / 2;
@@ -107,38 +107,39 @@ function solution_singly_even($input)
 		{
 			$mincol = 0;
 			$maxcol = $input / 2;
-			$minrow = ($input / 2) - 1;
+			$minrow = $input / 2;
 			$maxrow = $input;
 		}
 		$center = $mincol + Math.ceil(($input/2) / 2);
 		$row = $minrow;
 		$col = $center - 1;
-		for ($i = 0; $i < (($input/2) * ($input / 2));)
+		for ($j = 0; $j < (($input/2) * ($input / 2));)
 		{
 			if ($magic[$row][$col] == 0)
 			{
 				$magic[$row][$col] = $i + 1;
 				$col++;
 				$row--;
-				if ($col > $maxcol)
+				if ($col > $maxcol - 1)
 					$col = $mincol;
 				if ($row < $minrow)
-					$row = $maxrow;
+					$row = $maxrow - 1;
 				$i++;
+				$j++;
 			}
 			else
 			{
 				$col--;
 				$row++;
-				if ($row > $maxrow)
+				if ($row > $maxrow - 1)
 					$row = $minrow;
 				if ($col < $mincol)
-					$col = $maxcol;
+					$col = $maxcol - 1;
 				$row++;
-				if ($row > $maxrow)
+				if ($row > $maxrow - 1)
 					$row = $minrow;
 				if ($col < $mincol)
-					$col = $maxcol;
+					$col = $maxcol - 1;
 			}
 		}
 	}
