@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Magic Square</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
 <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="script_odd.js"></script>
 <script type="text/javascript" src="script_doubly_even.js"></script>

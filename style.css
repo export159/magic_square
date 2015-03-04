@@ -1,4 +1,12 @@
 table
 {
-	
+	border: 1px solid #555;
+	border-collapse: collapse;
+}
+table td
+{
+	padding: 5px;
+	text-align: center;
+	font-size: 25px;
+	font-family: Arial sans-serif;
 }
